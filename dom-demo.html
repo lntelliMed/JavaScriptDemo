@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+    <script>
+      function createElement(elementName, elementContent, numberOfTimes) {
+        for (var i = 0; i < numberOfTimes; i++) {
+          var someElement = document.createElement(elementName);
+
+          if (elementName.toLowerCase() === "img") {
+            someElement.setAttribute("src", elementContent); 
+          } else {
+            someElement.innerHTML = elementContent;
+          }       
+
+          document.body.appendChild(someElement);
+        }
+      }
+      
+      var students = [
+		  {name: "Chris", grade: 100, subject: "JavaScript"},
+		  {name: "Mary", grade: 80, subject: "JavaScript"},
+		  {name: "Joe", grade: 60, subject: "JavaScript"}
+		];
+
+
+
+	createElement("h2", "Student Grades", 1);
+
+	for (var i = 0; i < students.length; i++){
+		createElement("p","Name: " + students[i].name + " Grade: " + students[i].grade + " Subject: " + students[i].subject, 1);
+
+	}
+	
+
+		
+
+
+
+    </script>
+
+</body>
+</html>
