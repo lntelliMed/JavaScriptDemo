@@ -1,0 +1,77 @@
+<html>
+<head>
+	    <style>
+	      .box p {
+	        margin: 50px auto;
+	        width: 320px;
+	        border: 5px solid black;
+	      }
+	      .box div {
+	        margin: 50px auto;
+	        width: 320px;
+	        border: 5px solid black;
+	      }
+	      .box header {
+	        text-align: center;
+	        font-size: 24px;
+	        padding: 10px;
+	        background-color: #ff9;
+	        cursor: pointer;
+	      }      
+	      .hide {
+	        display: none;
+	      }
+    </style>
+
+</head>
+<body>
+	<div class="box">
+
+	</div>
+<script>
+	
+	var students = [
+		{name: "Chris", subject: "Math", grade: 100},
+		{name: "Larry", subject: "Physics", grade: 95}
+	];
+
+
+	for (var i = 0; i < students.length; i++){
+		 var student = students[i];
+		 var divElement = document.getElementsByTagName("div")[0];
+
+
+		 var headerElement = document.createElement("header");
+	
+         headerElement.innerHTML = student.name;
+		 //document.body.appendChild(headerElement);
+		 divElement.appendChild(headerElement);
+
+		 var firstPElement = document.createElement("p");
+		 firstPElement.innerHTML = student.subject;
+		 //document.body.appendChild(firstPElement);
+		 divElement.appendChild(firstPElement);
+
+		 var secondPElement = document.createElement("p");
+		 secondPElement.innerHTML = student.grade;
+		 //document.body.appendChild(secondPElement);
+		 divElement.appendChild(secondPElement);
+
+
+
+	}
+	var headerElements = document.getElementsByTagName("header");
+	for (var i = 0; i < headerElements.length; i++){
+		var headerElement = headerElements[i];
+		headerElement.addEventListener("click", function(){
+		 	var pElements = document.getElementsByTagName("p");
+			alert("There are " + pElements.length + " p elements in this page!")
+		 });
+
+	}
+	
+
+
+</script>
+</body>
+</html>
